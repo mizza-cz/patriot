@@ -2529,27 +2529,38 @@ body.is-search-open .Search {
   font-family: var(--fontFamilyPrimary);
   letter-spacing: 0.0625rem;
   margin-bottom: 3.5rem;
+  @media (max-width: 720px) {
+    margin-bottom: 16px;
+  }
 }
 .PostSection-img {
   position: relative;
   margin-bottom: 1rem;
-  span {
-    display: block;
-    font-size: 1.75rem;
-    position: absolute;
-    right: 32px;
-    bottom: 16px;
-    color: #fff;
-    @media (max-width: 720px) {
-      font-size: 1.5rem;
-    }
+}
+.PostItem-wrap {
+  margin: 20px 0;
+  border-top: 0.0625rem solid var(--colorBorder500);
+  .PostsSection-title {
+    margin-bottom: 24px;
   }
 }
 .PostSection-author {
   display: block;
   margin-bottom: 2rem;
   font-family: var(--fontFamilySecondary);
-
+  @media (max-width: 720px) {
+    margin-bottom: 26px;
+  }
+  span {
+    display: block;
+    font-size: 1.25rem;
+    text-align: right;
+    font-weight: 600;
+    margin-bottom: 4px;
+    @media (max-width: 720px) {
+      font-size: 1.5rem;
+    }
+  }
   p {
     font-size: 1.25rem;
     line-height: 1.5;
