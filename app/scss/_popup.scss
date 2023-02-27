@@ -1,0 +1,100 @@
+.mlctr-popup {
+  z-index: 109999999;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-weight: 400;
+  @media (max-width: 1100px) {
+    display: none;
+  }
+}
+.mlctr-popup .mlctr-popup-stripe {
+  /* customize stripe */
+  text-align: center;
+  height: auto;
+  min-height: calc(55px + 2.5vw);
+  background-color: #000;
+  -webkit-transition: height ease-out 0.2s;
+  -moz-transition: height ease-out 0.2s;
+  transition: height ease-out 0.2s;
+  /* stripe defaults */
+  position: fixed;
+  border-top: 0;
+  padding: 0px 40px 0px 40px;
+  bottom: 0px;
+  width: 100%;
+  z-index: 109999999;
+  box-sizing: border-box;
+  @media (max-width: 1200px) {
+    padding-left: 20px;
+  }
+}
+.mlctr-popup .mlctr-popup-stripe > a {
+  /* stripe roll-up button must be an anchor */
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  padding: 15px 0 10px 0;
+  padding-top: calc(10px + 1.3vw);
+  padding-bottom: calc(10px + 1.2vw);
+  font-size: calc(10px + 2vw);
+  line-height: calc(16px + 2vw);
+  font-weight: 700;
+  color: #fff;
+}
+
+.mlctr-popup .mlctr-popup-stripe a.mlctr-close-icon {
+  display: block;
+  position: absolute;
+  right: calc(8px + 1.8vw);
+  top: 50%;
+  font-size: 16px;
+  line-height: 36px;
+  margin-top: -22px;
+  padding: 0;
+}
+.mlctr-popup .mlctr-popup-stripe img.mlctr-close-icon {
+  max-width: calc(28px + 1.6vw);
+}
+.mlctr-popup .mlctr-popup-stripe a.mlctr-up {
+  display: block;
+  position: absolute;
+  left: calc(10px + 3vw);
+  top: calc(-15px - 1.2vw);
+  margin: 0;
+  padding: 0;
+}
+.mlctr-popup .mlctr-popup-stripe img.mlctr-up {
+  max-width: calc(46px + 4vw);
+}
+/* ON CLICK */
+.mlctr-popup .mlctr-popup-stripe:target {
+  height: 100%;
+  background-color: RGBA(255, 255, 255, 0.9);
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+.mlctr-popup .mlctr-popup-stripe:target > a {
+  display: none !important;
+}
+.mlctr-popup .mlctr-popup-stripe:target .mlctr-popup-content {
+  display: block;
+}
+/* Close via CSS;alternative to mailocator.action.do('close') */
+.mlctr-popup:target {
+  display: none;
+  visibility: hidden;
+}
+
+.mlctr-popup__ban {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: block;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  @media (max-width: 1200px) {
+    margin: 0;
+  }
+}
