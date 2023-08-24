@@ -106,6 +106,21 @@
             <div class="row g-0 vh-100">
               <div class="col-xl-8">
                 <div class="MainNav-colLeft">
+                  <form class="header-form__mob" action="/" method="post" id="">
+                    <select
+                      name="regionId"
+                      onchange="this.closest('form').submit();"
+                      class="Header-select"
+                    >
+                      <option value="">vyberte kraj</option>
+                      <option value="1">Moravskoslezský kraj</option>
+                      <option value="3">Olomoucký kraj</option>
+                      <option value="2">Zlínský kraj</option>
+                    </select>
+                    <input type="hidden" name="do" value="regionForm-submit" /><!--[if IE
+                      ]><input type="IEbug" disabled style="display: none"
+                    /><![endif]-->
+                  </form>
                   <div class="row">
                     <div class="col-xl-8">
                       <nav class="MainNav-box MainNav-box--twoCols">
