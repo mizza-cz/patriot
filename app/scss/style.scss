@@ -1650,7 +1650,7 @@ body {
   text-transform: uppercase;
 }
 .Header {
-  top: 110px;
+  top: 140px;
   z-index: 100;
   min-width: 22.5rem;
   @media (max-width: 930px) {
@@ -3609,17 +3609,14 @@ body.is-search-open .Search {
   .PostSection-header {
     margin-top: 32px;
   }
-  .HeroSection-smallText{
+  .HeroSection-smallText {
     display: block;
     margin-top: 32px;
-    
   }
 }
 @media (max-width: 920px) {
- 
-  .HeroSection-smallText{
+  .HeroSection-smallText {
     display: block;
     margin-top: 32px;
-    
   }
 }
