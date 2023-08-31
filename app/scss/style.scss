@@ -1650,7 +1650,7 @@ body {
   text-transform: uppercase;
 }
 .Header {
-  top: 140px;
+  top: 160px;
   z-index: 100;
   min-width: 22.5rem;
   @media (max-width: 930px) {
@@ -1772,6 +1772,7 @@ body {
   display: flex;
   min-height: 45.75rem;
   margin-bottom: 6rem;
+  margin-top: 24px;
 }
 .HeroSection-container {
   max-width: 98.75rem;
