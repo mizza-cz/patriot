@@ -3621,3 +3621,43 @@ body.is-search-open .Search {
     margin-top: 32px;
   }
 }
+.slider-ban {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.big-ban {
+  width: 100%;
+  display: none;
+  aspect-ratio: 900/90;
+}
+
+.big-ban img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.slider-bans {
+  width: 100%;
+  overflow: hidden;
+  &__inner {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+  &__item {
+    flex: 0 0 25%;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @media (max-width: 920px) {
+      flex: 0 0 50%;
+    }
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}

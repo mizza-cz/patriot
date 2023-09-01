@@ -6294,4 +6294,54 @@
         r.appendChild(i[a]);
     }
   });
+
+document.addEventListener('DOMContentLoaded', function () {
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.big-ban');
+
+  function showSlide(index) {
+    slides[currentSlide].style.display = 'none';
+    slides[index].style.display = 'block';
+    currentSlide = index;
+  }
+
+  function nextSlide() {
+    let nextIndex = currentSlide + 1;
+    if (nextIndex >= slides.length) {
+      nextIndex = 0;
+    }
+    showSlide(nextIndex);
+  }
+
+  // Показываем первый слайд
+  showSlide(currentSlide);
+
+  // Устанавливаем интервал смены слайдов (через 5 секунд)
+  setInterval(nextSlide, 5000);
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+  const sliderContainer = document.querySelector('.slider-bans__inner');
+  const slideItems = document.querySelectorAll('.slider-bans__item');
+  const slideWidth = slideItems[0].offsetWidth;
+  let currentIndex = 0;
+
+  function showSlide(index) {
+    currentIndex = index;
+    const translateX = -index * slideWidth;
+    sliderContainer.style.transform = `translateX(${translateX}px)`;
+  }
+
+  function nextSlide() {
+    currentIndex++;
+    if (currentIndex >= slideItems.length) {
+      currentIndex = 0;
+    }
+    showSlide(currentIndex);
+  }
+
+  // Устанавливаем интервал смены слайдов (через 5 секунд)
+  setInterval(nextSlide, 5000);
+});
+
 //# sourceMappingURL=scripts.js.map
