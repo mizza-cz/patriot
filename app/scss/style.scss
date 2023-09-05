@@ -1120,10 +1120,12 @@ body {
 .Card-img {
   margin-bottom: 1.5rem;
 }
+.Card-img img {
+  margin: 0 auto;
+  position: relative !important;
+}
 .Card-img:before {
-  content: '';
-  display: block;
-  padding-top: 65.42056%;
+  display: none;
 }
 .Card-img:after {
   content: '';
@@ -1683,6 +1685,10 @@ body {
   padding: 0;
   margin: 0.5rem 2.5rem 0 0;
   order: -1;
+  @media (max-width: 420px) {
+    width: 4.5rem;
+    height: 2.2rem;
+  }
 }
 .Header-select {
   color: var(--colorDark);
@@ -1773,6 +1779,9 @@ body {
   min-height: 45.75rem;
   margin-bottom: 6rem;
   margin-top: 24px;
+  @media (max-width: 640px) {
+    margin-bottom: 40px;
+  }
 }
 .HeroSection-container {
   max-width: 98.75rem;
@@ -1849,6 +1858,9 @@ body {
   height: 0.125rem;
   margin-left: 1.25rem;
 }
+.SignpostItem-info a {
+  color: var(--colorGrey500);
+}
 .HeroSection-img {
   position: absolute;
   left: 50%;
@@ -1856,6 +1868,9 @@ body {
   height: 45.75rem;
   margin-top: -5rem;
   margin-left: -8.5rem;
+  @media (max-width: 640px) {
+    margin-top: 0;
+  }
 }
 .HeroSection-img img {
   width: 100%;
@@ -2652,12 +2667,16 @@ body.is-search-open .Search {
 .PostSection-img:before {
   content: '';
   display: block;
-  padding-top: 66.78832%;
+  padding-top: 55.78832%;
 }
 .PostSection-img:after {
   position: absolute;
   border-bottom: 8.5rem solid transparent;
   border-right: 8.5rem solid var(--colorLight);
+  @media (max-width: 720px) {
+    border-bottom: 4rem solid transparent;
+    border-right: 4rem solid var(--colorLight);
+  }
 }
 .PostSection-bottom {
   padding-bottom: 2rem;
