@@ -6319,44 +6319,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // Устанавливаем интервал смены слайдов (через 5 секунд)
   setInterval(nextSlide, 5000);
 });
-// document.addEventListener('DOMContentLoaded', function () {
-//   const sliderContainer = document.querySelector('.slider-bans__inner');
-//   const slideItems = document.querySelectorAll('.slider-bans__item');
-//   const slideWidth = slideItems[0].offsetWidth;
-//   const numSlides = slideItems.length;
-//   let currentIndex = 0;
-//   let isTransitioning = false;
 
-//   // Клонируем слайды для бесконечной прокрутки
-//   const clonedSlides = Array.from(slideItems).map((slide) => slide.cloneNode(true));
-//   clonedSlides.forEach((slide) => sliderContainer.appendChild(slide));
-
-//   function showSlide(index) {
-//     if (!isTransitioning) {
-//       isTransitioning = true;
-//       currentIndex = index;
-//       const translateX = -index * slideWidth;
-//       sliderContainer.style.transition = 'transform 1s ease-in-out';
-//       sliderContainer.style.transform = `translateX(${translateX}px)`;
-
-//       // Убираем переход после окончания анимации
-//       setTimeout(() => {
-//         isTransitioning = false;
-//         sliderContainer.style.transition = 'none';
-//       }, 1000);
-//     }
-//   }
-
-//   function nextSlide() {
-//     if (!isTransitioning) {
-//       currentIndex++;
-//       showSlide(currentIndex);
-//     }
-//   }
-
-//   // Устанавливаем интервал смены слайдов (через 5 секунд)
-//   setInterval(nextSlide, 5000);
-// });
 document.addEventListener('DOMContentLoaded', function () {
   const sliderContainer = document.querySelector('.slider-bans__inner');
   const slideItems = document.querySelectorAll('.slider-bans__item');
@@ -6402,3 +6365,16 @@ document.addEventListener('DOMContentLoaded', function () {
   // Устанавливаем интервал смены слайдов (через 5 секунд)
   setInterval(nextSlide, 5000);
 });
+// const aElements = document.querySelectorAll('.Card.Card--right');
+
+// // Проходим по всем найденным элементам
+// aElements.forEach((aElement) => {
+//   // Создаем новый элемент <div>
+//   const divElement = document.createElement('div');
+
+//   // Копируем атрибуты и содержимое из элемента <a> в элемент <div>
+//   divElement.innerHTML = aElement.innerHTML;
+
+//   // Заменяем элемент <a> на элемент <div> в DOM дереве
+//   aElement.parentNode.replaceChild(divElement, aElement);
+// });

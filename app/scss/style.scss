@@ -1119,6 +1119,7 @@ body {
 }
 .Card-img {
   margin-bottom: 1.5rem;
+  display: block;
 }
 .Card-img img {
   margin: 0 auto;
@@ -1181,6 +1182,8 @@ body {
   line-height: 1;
   letter-spacing: 0.0625rem;
   margin: 0.5rem 0 1rem;
+  color: var(--colorDark700) !important;
+  text-decoration-color: transparent !important;
 }
 .Card-date,
 .HeroSection-info,
@@ -3686,3 +3689,5 @@ body.is-search-open .Search {
 .mt-10 {
   margin-top: 40px;
 }
+
+ 
