@@ -6319,29 +6319,86 @@ document.addEventListener('DOMContentLoaded', function () {
   // Устанавливаем интервал смены слайдов (через 5 секунд)
   setInterval(nextSlide, 5000);
 });
+// document.addEventListener('DOMContentLoaded', function () {
+//   const sliderContainer = document.querySelector('.slider-bans__inner');
+//   const slideItems = document.querySelectorAll('.slider-bans__item');
+//   const slideWidth = slideItems[0].offsetWidth;
+//   const numSlides = slideItems.length;
+//   let currentIndex = 0;
+//   let isTransitioning = false;
 
+//   // Клонируем слайды для бесконечной прокрутки
+//   const clonedSlides = Array.from(slideItems).map((slide) => slide.cloneNode(true));
+//   clonedSlides.forEach((slide) => sliderContainer.appendChild(slide));
+
+//   function showSlide(index) {
+//     if (!isTransitioning) {
+//       isTransitioning = true;
+//       currentIndex = index;
+//       const translateX = -index * slideWidth;
+//       sliderContainer.style.transition = 'transform 1s ease-in-out';
+//       sliderContainer.style.transform = `translateX(${translateX}px)`;
+
+//       // Убираем переход после окончания анимации
+//       setTimeout(() => {
+//         isTransitioning = false;
+//         sliderContainer.style.transition = 'none';
+//       }, 1000);
+//     }
+//   }
+
+//   function nextSlide() {
+//     if (!isTransitioning) {
+//       currentIndex++;
+//       showSlide(currentIndex);
+//     }
+//   }
+
+//   // Устанавливаем интервал смены слайдов (через 5 секунд)
+//   setInterval(nextSlide, 5000);
+// });
 document.addEventListener('DOMContentLoaded', function () {
   const sliderContainer = document.querySelector('.slider-bans__inner');
   const slideItems = document.querySelectorAll('.slider-bans__item');
-  const slideWidth = slideItems[0].offsetWidth;
+  const numSlides = slideItems.length;
+  const slidesToShow = 4; // Количество слайдов, которые отображаются одновременно
   let currentIndex = 0;
+  let isTransitioning = false;
+
+  // Клонируем слайды для бесконечной прокрутки
+  const clonedSlides = Array.from(slideItems).map((slide) => slide.cloneNode(true));
+  clonedSlides.forEach((slide) => sliderContainer.appendChild(slide));
 
   function showSlide(index) {
-    currentIndex = index;
-    const translateX = -index * slideWidth;
-    sliderContainer.style.transform = `translateX(${translateX}px)`;
+    if (!isTransitioning) {
+      isTransitioning = true;
+      currentIndex = index;
+      const translateX = -(index * (100 / slidesToShow));
+      sliderContainer.style.transition = 'transform 1s ease-in-out';
+      sliderContainer.style.transform = `translateX(${translateX}%)`;
+
+      // Убираем переход после окончания анимации
+      setTimeout(() => {
+        isTransitioning = false;
+        sliderContainer.style.transition = 'none';
+
+        // Если текущий индекс находится в клонированных слайдах, перейдите к соответствующему оригинальному слайду
+        if (currentIndex >= numSlides) {
+          currentIndex = currentIndex - numSlides;
+          const translateX = -(currentIndex * (100 / slidesToShow));
+          sliderContainer.style.transform = `translateX(${translateX}%)`;
+        }
+      }, 1000);
+    }
   }
 
   function nextSlide() {
-    currentIndex++;
-    if (currentIndex >= slideItems.length) {
-      currentIndex = 0;
+    if (!isTransitioning) {
+      currentIndex++;
+      showSlide(currentIndex);
     }
-    showSlide(currentIndex);
   }
 
   // Устанавливаем интервал смены слайдов (через 5 секунд)
   setInterval(nextSlide, 5000);
 });
-
-//# sourceMappingURL=scripts.js.map
