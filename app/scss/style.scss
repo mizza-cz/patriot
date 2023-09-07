@@ -3692,6 +3692,11 @@ body.is-search-open .Search {
 
 .photogallery {
   margin-bottom: 40px;
+  figure {
+    margin: 0;
+    padding: 0;
+    display: block;
+  }
   img {
     margin: 0;
     padding: 0;
@@ -3703,18 +3708,34 @@ body.is-search-open .Search {
     display: flex;
     margin-left: -6px;
     margin-right: -6px;
+    flex-wrap: wrap;
   }
   &__col {
     max-width: 20%;
     flex: 0 0 20%;
-    padding: 0 6px;
+    padding: 0 6px !important;
+    margin: 0 0 12px 0 !important;
+  }
+  &__small {
+    width: 100%;
+    height: 100%;
+    display: block;
+    margin: 0 !important;
+    padding: 0 !important;
   }
   &__main {
     width: 100%;
     display: block;
     position: relative;
     aspect-ratio: 720/480;
-    margin-bottom: 12px;
+    margin-bottom: 12px !important;
+    a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
     &::before {
       position: absolute;
       border-bottom: 5.5rem solid transparent;
