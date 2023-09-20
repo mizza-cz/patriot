@@ -1535,8 +1535,7 @@ body {
   -webkit-text-decoration-color: var(--colorDark);
   text-decoration-color: var(--colorDark);
 }
-.Header-button__contacts {
-}
+
 .Footer-nav a {
   color: var(--colorGrey500);
   letter-spacing: 0.0625rem;
@@ -3664,6 +3663,9 @@ body.is-search-open .Search {
 .slider-bans {
   width: 100%;
   overflow: hidden;
+  @media (max-width: 640px) {
+    display: none;
+  }
   &__inner {
     display: flex;
     transition: transform 0.5s ease-in-out;
@@ -3753,5 +3755,15 @@ body.is-search-open .Search {
         border-right: 3.5rem solid var(--colorLight);
       }
     }
+  }
+}
+.ban-mobill__respon {
+  display: block;
+  width: 100%;
+  aspect-ratio: 720/220;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 }
