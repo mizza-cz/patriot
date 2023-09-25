@@ -1,3 +1,22 @@
+var bannersAside = document.querySelector('.BannersAside');
+var bannersAsideSticky = document.querySelector('.BannersAside-sticky');
+
+if (bannersAside && bannersAsideSticky) {
+  var isSticky = false;
+  var bannersAsideBottom = bannersAside.offsetTop + bannersAside.clientHeight;
+
+  window.addEventListener('scroll', function () {
+    var scrollTop = window.scrollY || document.documentElement.scrollTop;
+
+    if (scrollTop >= bannersAsideBottom && !isSticky) {
+      bannersAsideSticky.classList.add('BannersAside-sticky');
+      isSticky = true;
+    } else if (scrollTop < bannersAsideBottom && isSticky) {
+      bannersAsideSticky.classList.remove('BannersAside-sticky');
+      isSticky = false;
+    }
+  });
+}
 !(function (e, t) {
   'object' == typeof exports && 'undefined' != typeof module
     ? (module.exports = t())

@@ -3767,3 +3767,37 @@ body.is-search-open .Search {
     object-fit: cover;
   }
 }
+.PostsSection__ban {
+  width: 100%;
+  display: block;
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+}
+.BannersAside-sticky {
+  top: 2rem;
+  position: fixed;
+  margin-top: 0 !important;
+}
+.BannersAside-sticky--fixed {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 0;
+  transition: all 0.3s;
+  margin-top: 32px;
+  img {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    display: block;
+  }
+}
+.BannersAside {
+  position: relative;
+}

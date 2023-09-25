@@ -2,9 +2,6 @@
   z-index: 109999999;
   font-family: 'Montserrat', Arial, sans-serif;
   font-weight: 400;
-  @media (max-width: 1100px) {
-    display: none;
-  }
 }
 .mlctr-popup .mlctr-popup-stripe {
   /* customize stripe */
@@ -50,9 +47,16 @@
   line-height: 36px;
   margin-top: -22px;
   padding: 0;
+  @media (max-width: 1200px) {
+    top: 40px;
+    right: 10px;
+  }
 }
 .mlctr-popup .mlctr-popup-stripe img.mlctr-close-icon {
   max-width: calc(28px + 1.6vw);
+  @media (max-width: 1200px) {
+    max-width: 20px;
+  }
 }
 .mlctr-popup .mlctr-popup-stripe a.mlctr-up {
   display: block;
