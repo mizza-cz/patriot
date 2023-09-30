@@ -3780,6 +3780,9 @@ body.is-search-open .Search {
   top: 2rem;
   position: fixed;
   margin-top: 0 !important;
+  @media (max-width: 935px) {
+    display: none !important;
+  }
 }
 .BannersAside-sticky--fixed {
   display: block;
