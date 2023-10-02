@@ -3778,7 +3778,7 @@ body.is-search-open .Search {
 }
 .BannersAside-sticky {
   top: 2rem;
-  position: fixed;
+  position: relative;
   margin-top: 0 !important;
   @media (max-width: 935px) {
     display: none !important;
@@ -3786,6 +3786,7 @@ body.is-search-open .Search {
 }
 .BannersAside-sticky--fixed {
   display: block;
+  position: fixed;
   width: 100%;
   height: auto;
   max-width: 300px;
@@ -3803,4 +3804,16 @@ body.is-search-open .Search {
 }
 .BannersAside {
   position: relative;
+}
+
+.s-desktop {
+  @media (max-width: 640px) {
+    display: none;
+  }
+}
+.s-mobile {
+  display: none;
+  @media (max-width: 640px) {
+    display: block;
+  }
 }

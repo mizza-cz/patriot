@@ -9,10 +9,10 @@ if (bannersAside && bannersAsideSticky) {
     var scrollTop = window.scrollY || document.documentElement.scrollTop;
 
     if (scrollTop >= bannersAsideBottom && !isSticky) {
-      bannersAsideSticky.classList.add('BannersAside-sticky');
+      bannersAsideSticky.classList.add('BannersAside-sticky--fixed');
       isSticky = true;
     } else if (scrollTop < bannersAsideBottom && isSticky) {
-      bannersAsideSticky.classList.remove('BannersAside-sticky');
+      bannersAsideSticky.classList.remove('BannersAside-sticky--fixed');
       isSticky = false;
     }
   });
@@ -6318,25 +6318,31 @@ document.addEventListener('DOMContentLoaded', function () {
   let currentSlide = 0;
   const slides = document.querySelectorAll('.big-ban');
 
-  function showSlide(index) {
-    slides[currentSlide].style.display = 'none';
-    slides[index].style.display = 'block';
-    currentSlide = index;
-  }
-
-  function nextSlide() {
-    let nextIndex = currentSlide + 1;
-    if (nextIndex >= slides.length) {
-      nextIndex = 0;
+  // Проверка наличия слайдов
+  if (slides.length > 0) {
+    function showSlide(index) {
+      slides[currentSlide].style.display = 'none';
+      slides[index].style.display = 'block';
+      currentSlide = index;
     }
-    showSlide(nextIndex);
+
+    function nextSlide() {
+      let nextIndex = currentSlide + 1;
+      if (nextIndex >= slides.length) {
+        nextIndex = 0;
+      }
+      showSlide(nextIndex);
+    }
+
+    // Показываем первый слайд
+    showSlide(currentSlide);
+
+    // Устанавливаем интервал смены слайдов (через 5 секунд)
+    setInterval(nextSlide, 5000);
+  } else {
+    // Если слайды не найдены, вы можете выполнить другие действия или вывести сообщение об отсутствии слайдера.
+    console.log('Слайдер не найден на странице.');
   }
-
-  // Показываем первый слайд
-  showSlide(currentSlide);
-
-  // Устанавливаем интервал смены слайдов (через 5 секунд)
-  setInterval(nextSlide, 5000);
 });
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -6384,11 +6390,18 @@ document.addEventListener('DOMContentLoaded', function () {
   setInterval(nextSlide, 5000);
 });
 
-$('#animated-thumbnail').lightGallery({
-  thumbnail: true,
-  getCaptionFromTitleOrAlt: true,
-  selector: 'a[style]',
+$(document).ready(function () {
+  if ($('#animated-thumbnail').length > 0) {
+    $('#animated-thumbnail').lightGallery({
+      thumbnail: true,
+      getCaptionFromTitleOrAlt: true,
+      selector: 'a[style]',
+    });
+  } else {
+    console.log(' ');
+  }
 });
+
 // Image Transition
 var scroll = 'yes',
   Fscroll = scroll.replace(/(\r\n|\n|\r)/gm, ' ');
