@@ -3694,6 +3694,10 @@ body.is-search-open .Search {
 
 .photogallery {
   margin-bottom: 40px;
+  .PostSection-author {
+    margin-top: 16px;
+    margin-bottom: 0;
+  }
   figure {
     margin: 0;
     padding: 0;
@@ -3815,5 +3819,23 @@ body.is-search-open .Search {
   display: none;
   @media (max-width: 640px) {
     display: block;
+  }
+}
+
+.Content {
+  p {
+    img + span {
+      display: block;
+      margin-top: 12px;
+      margin-left: auto;
+      text-align: right;
+      margin-bottom: 12px;
+      font-size: 1.25rem;
+      font-weight: 500;
+    }
+    span + em {
+      font-size: 1.25rem;
+      line-height: 1.5;
+    }
   }
 }
