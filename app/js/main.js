@@ -6346,10 +6346,17 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 document.addEventListener('DOMContentLoaded', function () {
+  // Проверяем, есть ли элементы на странице
   const sliderContainer = document.querySelector('.slider-bans__inner');
   const slideItems = document.querySelectorAll('.slider-bans__item');
+
+  if (!sliderContainer || !slideItems.length) {
+    console.error('Не найдены необходимые элементы на странице.');
+    return; // Завершаем выполнение кода, если элементы не найдены.
+  }
+
   const numSlides = slideItems.length;
-  const slidesToShow = 4; // Количество слайдов, которые отображаются одновременно
+  const slidesToShow = 4;
   let currentIndex = 0;
   let isTransitioning = false;
 
