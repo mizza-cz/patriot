@@ -10,6 +10,7 @@
 .Content h2,
 .Content p.Big {
   font-size: calc(1.3rem + 0.5vw);
+  font-weight: 600;
 }
 .ContactSection-content a,
 .Content a:not(.Card) {
@@ -1870,8 +1871,26 @@ body {
   height: 45.75rem;
   margin-top: -5rem;
   margin-left: -8.5rem;
+  display: block;
   @media (max-width: 640px) {
     margin-top: 0;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  &::before {
+    @media (max-width: 640px) {
+      top: 0;
+      z-index: 2;
+      width: 0;
+      height: 0;
+      border-left: 0 solid transparent;
+      border-top: 0 solid transparent;
+      right: 0;
+      content: '';
+      position: absolute;
+      border-bottom: 4rem solid transparent;
+      border-right: 4rem solid var(--colorLight);
+    }
   }
 }
 .HeroSection-img img {
@@ -2597,6 +2616,11 @@ body.is-search-open .Search {
   letter-spacing: 0.125rem;
   flex-wrap: wrap;
   justify-content: space-between;
+}
+.PostSection-info a {
+  text-decoration: none;
+  font-size: 0.875rem;
+  color: var(--colorGrey500);
 }
 .PostSection-info > * {
   margin-bottom: 1.5rem;
