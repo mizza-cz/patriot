@@ -1197,11 +1197,15 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.125rem;
 }
+.HeroSection-info a {
+  color: var(--colorGrey500);
+  text-decoration: underline;
+}
 .PostsItem-info a {
   color: var(--colorGrey500);
   font-weight: 500;
   font-size: 0.875rem;
-  text-decoration: none;
+  text-decoration: underline;
 }
 .FilterForm-box,
 .FilterForm-opener,
@@ -1790,6 +1794,9 @@ body {
   margin-top: 24px;
   @media (max-width: 640px) {
     margin-bottom: 40px;
+    margin-top: 60px;
+    display: flex !important;
+    flex-direction: column-reverse;
   }
 }
 .HeroSection-container {
@@ -2624,7 +2631,7 @@ body.is-search-open .Search {
   justify-content: space-between;
 }
 .PostSection-info a {
-  text-decoration: none;
+  text-decoration: underline;
   font-size: 0.875rem;
   color: var(--colorGrey500);
 }
@@ -3660,15 +3667,19 @@ body.is-search-open .Search {
   .PostSection-header {
     margin-top: 32px;
   }
+}
+
+@media (max-width: 920px) {
   .HeroSection-smallText {
     display: block;
     margin-top: 32px;
   }
 }
-@media (max-width: 920px) {
+@media (max-width: 640px) {
   .HeroSection-smallText {
     display: block;
-    margin-top: 32px;
+    margin-top: 0;
+    padding-top: 0;
   }
 }
 .slider-ban {

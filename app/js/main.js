@@ -6341,7 +6341,6 @@ document.addEventListener('DOMContentLoaded', function () {
     setInterval(nextSlide, 5000);
   } else {
     // Если слайды не найдены, вы можете выполнить другие действия или вывести сообщение об отсутствии слайдера.
-    console.log('Слайдер не найден на странице.');
   }
 });
 
