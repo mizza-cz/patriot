@@ -200,6 +200,13 @@ textarea {
   --bs-gutter-x: 6rem;
   --bs-gutter-y: 6rem;
 }
+@media (max-width: 640px) {
+  .g-24 {
+    --bs-gutter-x: 3.5rem;
+    --bs-gutter-y: 3.5rem;
+  }
+}
+
 .table {
   --bs-table-bg: transparent;
   --bs-table-accent-bg: transparent;
@@ -1159,6 +1166,7 @@ body {
   font-weight: 500;
   font-size: 0.75rem;
   letter-spacing: 0.25rem;
+  display: block;
 }
 .Card-title,
 .ContactSection-content h2 {
@@ -1185,6 +1193,7 @@ body {
   margin: 0.5rem 0 1rem;
   color: var(--colorDark700) !important;
   text-decoration-color: transparent !important;
+  display: block;
 }
 .Card-date,
 .HeroSection-info,
@@ -2683,11 +2692,9 @@ body.is-search-open .Search {
 }
 .PostSection-author {
   display: block;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   font-family: var(--fontFamilySecondary);
-  @media (max-width: 720px) {
-    margin-bottom: 26px;
-  }
+
   span {
     display: block;
     font-size: 1rem;
@@ -3525,8 +3532,8 @@ body.is-search-open .Search {
     display: block;
   }
   .HeroSection-content {
-    min-height: 25rem;
-    padding: 2rem 1rem;
+    min-height: auto;
+    padding: 2rem 1rem 1rem;
     margin: 0 auto;
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 91% 100%, 0 100%, 0 50%);
     clip-path: polygon(0 0, 100% 0, 100% 90%, 91% 100%, 0 100%, 0 50%);

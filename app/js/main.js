@@ -6318,7 +6318,6 @@ document.addEventListener('DOMContentLoaded', function () {
   let currentSlide = 0;
   const slides = document.querySelectorAll('.big-ban');
 
-  // Проверка наличия слайдов
   if (slides.length > 0) {
     function showSlide(index) {
       slides[currentSlide].style.display = 'none';
@@ -6334,23 +6333,18 @@ document.addEventListener('DOMContentLoaded', function () {
       showSlide(nextIndex);
     }
 
-    // Показываем первый слайд
     showSlide(currentSlide);
 
-    // Устанавливаем интервал смены слайдов (через 5 секунд)
     setInterval(nextSlide, 5000);
   } else {
-    // Если слайды не найдены, вы можете выполнить другие действия или вывести сообщение об отсутствии слайдера.
   }
 });
 
 document.addEventListener('DOMContentLoaded', function () {
-  // Проверяем, есть ли элементы на странице
   const sliderContainer = document.querySelector('.slider-bans__inner');
   const slideItems = document.querySelectorAll('.slider-bans__item');
 
   if (!sliderContainer || !slideItems.length) {
-    console.error('Не найдены необходимые элементы на странице.');
     return; // Завершаем выполнение кода, если элементы не найдены.
   }
 
