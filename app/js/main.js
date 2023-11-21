@@ -6426,3 +6426,11 @@ $(function () {
     $(this).tab('show');
   });
 });
+
+// Add an event listener to the checkbox
+var deliveryCheckbox = document.getElementById('deliveryCheckbox');
+deliveryCheckbox.addEventListener('change', function () {
+  // If the checkbox is checked, show the delivery address fields; otherwise, hide them
+  var deliveryAddress = document.getElementById('deliveryAddress');
+  deliveryAddress.style.display = deliveryCheckbox.checked ? 'block' : 'none';
+});

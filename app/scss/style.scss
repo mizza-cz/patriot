@@ -3631,7 +3631,6 @@ body.is-search-open .Search {
   display: block;
 
   &__wrapper {
-    background-color: rgba(#e9e9e9, 0.5);
     width: 100%;
     height: fit-content;
     position: relative;
@@ -3881,6 +3880,8 @@ body.is-search-open .Search {
 }
 .s-mobile {
   display: none;
+  img {
+  }
   @media (max-width: 640px) {
     display: block;
   }
@@ -4046,4 +4047,29 @@ body.is-search-open .Search {
 }
 .d-none {
   display: none;
+}
+
+.my-10 {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.Footer__Newsletter {
+  .NewsletterForm {
+    max-width: 300px;
+    width: 100%;
+    height: 300px;
+    margin: 0 auto;
+    margin-top: 40px;
+    margin-bottom: -20px;
+  }
+  .NewsletterForm-title {
+    font-size: 2rem;
+  }
+}
+#deliveryAddress {
+  margin-bottom: 24px;
+}
+.OrderSection-check {
+  margin-bottom: 16px;
 }
