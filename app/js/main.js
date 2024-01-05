@@ -1,22 +1,13 @@
-var bannersAside = document.querySelector('.BannersAside');
-var bannersAsideSticky = document.querySelector('.BannersAside-sticky');
+let parent = document.querySelector('.BannersAside-sticky').parentElement;
 
-if (bannersAside && bannersAsideSticky) {
-  var isSticky = false;
-  var bannersAsideBottom = bannersAside.offsetTop + bannersAside.clientHeight;
-
-  window.addEventListener('scroll', function () {
-    var scrollTop = window.scrollY || document.documentElement.scrollTop;
-
-    if (scrollTop >= bannersAsideBottom && !isSticky) {
-      bannersAsideSticky.classList.add('BannersAside-sticky--fixed');
-      isSticky = true;
-    } else if (scrollTop < bannersAsideBottom && isSticky) {
-      bannersAsideSticky.classList.remove('BannersAside-sticky--fixed');
-      isSticky = false;
-    }
-  });
+while (parent) {
+  const hasOverflow = getComputedStyle(parent).overflow;
+  if (hasOverflow !== 'visible') {
+    console.log(hasOverflow, parent);
+  }
+  parent = parent.parentElement;
 }
+
 !(function (e, t) {
   'object' == typeof exports && 'undefined' != typeof module
     ? (module.exports = t())
