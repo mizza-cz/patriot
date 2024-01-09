@@ -3902,6 +3902,15 @@ body.is-search-open .Search {
 .captcha {
   position: relative;
 }
+.BannersAside-sticky,
+.s-desktop,
+.s-mobile {
+  overflow: hidden;
+}
+.big-ban__wrapper {
+  height: 210px;
+  overflow: hidden;
+}
 .big-ban__wrapper > div {
   padding: 24px 0;
   height: auto !important;
