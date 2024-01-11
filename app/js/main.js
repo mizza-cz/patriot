@@ -1,13 +1,3 @@
-let parent = document.querySelector('.BannersAside-sticky').parentElement;
-
-while (parent) {
-  const hasOverflow = getComputedStyle(parent).overflow;
-  if (hasOverflow !== 'visible') {
-    console.log(hasOverflow, parent);
-  }
-  parent = parent.parentElement;
-}
-
 !(function (e, t) {
   'object' == typeof exports && 'undefined' != typeof module
     ? (module.exports = t())
@@ -6336,15 +6326,12 @@ document.addEventListener('DOMContentLoaded', function () {
   const slideItems = document.querySelectorAll('.slider-bans__item');
 
   if (!sliderContainer || !slideItems.length) {
-    return; // Завершаем выполнение кода, если элементы не найдены.
+    return;
   }
-
   const numSlides = slideItems.length;
   const slidesToShow = 4;
   let currentIndex = 0;
   let isTransitioning = false;
-
-  // Клонируем слайды для бесконечной прокрутки
   const clonedSlides = Array.from(slideItems).map((slide) => slide.cloneNode(true));
   clonedSlides.forEach((slide) => sliderContainer.appendChild(slide));
 
@@ -6418,10 +6405,14 @@ $(function () {
   });
 });
 
-// Add an event listener to the checkbox
 var deliveryCheckbox = document.getElementById('deliveryCheckbox');
-deliveryCheckbox.addEventListener('change', function () {
-  // If the checkbox is checked, show the delivery address fields; otherwise, hide them
-  var deliveryAddress = document.getElementById('deliveryAddress');
-  deliveryAddress.style.display = deliveryCheckbox.checked ? 'block' : 'none';
-});
+
+if (deliveryCheckbox) {
+  deliveryCheckbox.addEventListener('change', function () {
+    var deliveryAddress = document.getElementById('deliveryAddress');
+    if (deliveryAddress) {
+      deliveryAddress.style.display = deliveryCheckbox.checked ? 'block' : 'none';
+    }
+  });
+} else {
+}
