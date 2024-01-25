@@ -3849,7 +3849,8 @@ body.is-search-open .Search {
   position: sticky;
   top: 2rem;
   position: sticky;
-  margin-top: 0 !important;
+  // margin-top: 0 !important;
+  margin-top: 32px;
   @media (max-width: 935px) {
     display: none !important;
   }

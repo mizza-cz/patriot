@@ -98,7 +98,7 @@
     object-fit: cover;
   }
   @media (max-width: 1200px) {
-    margin: 0;
+    margin: 0 auto;
   }
 }
 .ban-seznam {
@@ -107,4 +107,18 @@
   img {
     margin: 0 auto;
   }
+}
+
+.mlctr-popup__btn {
+  background-color: #3f3f3f;
+  font-size: 14px;
+  width: 140px;
+  height: 31px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  margin-left: auto;
+  font-family: sans-serif;
 }

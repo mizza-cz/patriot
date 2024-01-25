@@ -6416,3 +6416,10 @@ if (deliveryCheckbox) {
   });
 } else {
 }
+
+function closePopup() {
+  var popup = document.getElementById('MlctrClose');
+  if (popup) {
+    popup.style.display = 'none';
+  }
+}
