@@ -2686,7 +2686,7 @@ body.is-search-open .Search {
 }
 .PostSection-img {
   position: relative;
-  margin-bottom: 1rem;
+  margin-bottom: 8px;
 }
 .PostItem-wrap {
   margin: 20px 0;
@@ -3759,7 +3759,7 @@ body.is-search-open .Search {
 .photogallery {
   margin-bottom: 40px;
   .PostSection-author {
-    margin-top: 16px;
+    margin-top: 8px;
     margin-bottom: 0;
   }
   figure {
@@ -4071,4 +4071,13 @@ body.is-search-open .Search {
 }
 .OrderSection-check {
   margin-bottom: 16px;
+}
+
+.PostSection p img + br {
+  display: none;
+}
+.PostSection p br + em {
+  margin-top: 8px;
+  display: block;
+  font-size: 1rem;
 }
