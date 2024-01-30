@@ -3749,17 +3749,23 @@ body.is-search-open .Search {
     }
   }
 }
+.Content .instagram-media {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
 .Content .ratio {
   float: left;
 }
 .mt-10 {
   margin-top: 40px;
 }
-
+.Content .ratio.ratio-16x9 {
+  margin-bottom: 16px;
+}
 .photogallery {
   margin-bottom: 40px;
   .PostSection-author {
-    margin-top: 8px;
+    margin-top: 0px;
     margin-bottom: 0;
   }
   figure {
