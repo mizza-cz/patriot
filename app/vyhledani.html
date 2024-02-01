@@ -1042,20 +1042,19 @@
 
                   <div class="col-12">
                     <form
-                      action="/vyhledavani?q=ostrava"
+                      action="/"
                       method="post"
                       id="frm-newsletterWidget-newsletterForm"
                       class="NewsletterForm"
                     >
-                      <div class="NewsletterForm-logo">
-                        <img
-                          src="/assets/front/images/content/piktogram.svg"
-                          loading="lazy"
-                          alt=""
-                        />
+                      <div class="SubscriptionItem-logo">
+                        <img src="images/content/piktogram.svg" loading="lazy" alt="" />
                       </div>
                       <span class="NewsletterForm-claim">Newsletter</span>
-                      <h2 class="NewsletterForm-title">Nejlepší obsah do vašeho e-mailu</h2>
+                      <h2 class="NewsletterForm-title">
+                        Nejlepší obsah <br />
+                        do vašeho e-mailu
+                      </h2>
                       <div class="NewsletterForm-field">
                         <input
                           type="email"
@@ -1066,18 +1065,11 @@
                           placeholder="Váš e-mail"
                         />
                       </div>
-                      <button class="NewsletterForm-button">Odebírat</button>
-                      <br />
-                      <br />
-                      <span style="font-size: 15px">
-                        Kliknutím na tlačítko „Odebírat“ souhlasíte se
-                        <a
-                          href="/data/2023_Magazin_PATRIOT_zpracovani_osobnich_udaju_-_newsleter.docx"
-                          target="_blank"
-                          >zpracováním osobních údajů</a
-                        >.
-                      </span>
-
+                      <button class="NewsletterForm-button">přihlásit k odběru</button>
+                      <div class="NewsletterForm__descr">
+                        Odesláním formuláře souhlasíte se
+                        <a href="#">zpracováním osobních údajů.</a>
+                      </div>
                       <input
                         type="hidden"
                         name="do"
