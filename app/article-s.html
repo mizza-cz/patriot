@@ -1160,15 +1160,10 @@
     <div class="mlctr-popup s-mobile" id="MlctrClose">
       <div class="mlctr-popup-stripe" id="MlctrPopup">
         <div onclick="closePopup()" class="mlctr-popup__btn">zavřít reklamu</div>
-        <div id="ssp-zone-166561" class="mlctr-popup__ban">
-          <img
-            src="https://via.placeholder.com/500x200/blue?text=500x200 Pop-up mobil 166561"
-            loading="lazy"
-            alt=""
-          />
-        </div>
+        <div id="ssp-zone-166561" class="mlctr-popup__ban"></div>
       </div>
     </div>
+
     <script
       defer
       src="https://code.jquery.com/jquery-3.6.0.min.js"
@@ -1188,7 +1183,26 @@
     ></script>
 
     <script defer src="js/main.js"></script>
-
+    <script>
+      function closePopup() {
+        var popup = document.getElementById('MlctrClose');
+        if (popup) {
+          var banElement = popup.querySelector('.mlctr-popup__ban');
+          var btnElement = popup.querySelector('.mlctr-popup__btn');
+          if (banElement && banElement.innerHTML.trim() === '') {
+            // Если элемент пуст, скрываем кнопку
+            console.log('Элемент пуст, скрываем кнопку');
+            btnElement.style.display = 'none';
+          } else {
+            // Если в элементе есть содержимое, показываем кнопку
+            console.log('Элемент не пуст, показываем кнопку');
+            btnElement.style.display = 'block';
+          }
+          console.log('Закрываем попап');
+          popup.style.display = 'none';
+        }
+      }
+    </script>
     <script>
       function createAdBanner(zoneId, width, height) {
         const banner = document.createElement('p');

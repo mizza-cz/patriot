@@ -6417,11 +6417,19 @@ if (deliveryCheckbox) {
 } else {
 }
 
-function closePopup() {
-  var popup = document.getElementById('MlctrClose');
-  if (popup) {
-    popup.style.display = 'none';
+document.addEventListener('DOMContentLoaded', function () {
+  function closePopup() {
+    var popup = document.getElementById('MlctrClose');
+    if (popup) {
+      popup.style.display = 'none';
+    }
   }
-}
 
- 
+  var banElement = document.querySelector('.mlctr-popup__ban');
+  var btnElement = document.querySelector('.mlctr-popup__btn');
+  if (banElement && banElement.textContent.trim() === '' && banElement.children.length === 0) {
+    btnElement.style.display = 'none';
+  } else {
+    btnElement.style.display = 'flex';
+  }
+});
