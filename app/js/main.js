@@ -6418,18 +6418,21 @@ if (deliveryCheckbox) {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-  function closePopup() {
+  window.closePopup = function () {
     var popup = document.getElementById('MlctrClose');
     if (popup) {
       popup.style.display = 'none';
     }
-  }
+  };
 
-  var banElement = document.querySelector('.mlctr-popup__ban');
-  var btnElement = document.querySelector('.mlctr-popup__btn');
-  if (banElement && banElement.textContent.trim() === '' && banElement.children.length === 0) {
-    btnElement.style.display = 'none';
-  } else {
-    btnElement.style.display = 'flex';
-  }
+  window.checkAndClosePopupIfEmpty = function () {
+    var popupContent = document.querySelector('.mlctr-popup__ban');
+    if (popupContent) {
+      if (popupContent.innerText.trim() === '' && popupContent.children.length === 0) {
+        window.closePopup();
+      }
+    }
+  };
+
+  window.checkAndClosePopupIfEmpty();
 });
