@@ -3,7 +3,7 @@
   font-family: 'Montserrat', Arial, sans-serif;
   font-weight: 400;
 }
-.mlctr-popup .mlctr-popup-stripe {
+.mlctr-popup .seznamAd--wrapper {
   /* customize stripe */
   text-align: center;
   height: auto;
@@ -23,7 +23,7 @@
     padding-left: 20px;
   }
 }
-.mlctr-popup .mlctr-popup-stripe > a {
+.mlctr-popup .seznamAd--wrapper > a {
   display: block;
   text-align: center;
   text-decoration: none;
@@ -36,7 +36,7 @@
   color: #fff;
 }
 
-.mlctr-popup .mlctr-popup-stripe a.mlctr-close-icon {
+.mlctr-popup .seznamAd--wrapper a.mlctr-close-icon {
   display: block;
   position: absolute;
   right: calc(8px + 1.8vw);
@@ -50,13 +50,13 @@
     right: 10px;
   }
 }
-.mlctr-popup .mlctr-popup-stripe img.mlctr-close-icon {
+.mlctr-popup .seznamAd--wrapper img.mlctr-close-icon {
   max-width: calc(28px + 1.6vw);
   @media (max-width: 1200px) {
     max-width: 20px;
   }
 }
-.mlctr-popup .mlctr-popup-stripe a.mlctr-up {
+.mlctr-popup .seznamAd--wrapper a.mlctr-up {
   display: block;
   position: absolute;
   left: calc(10px + 3vw);
@@ -64,30 +64,30 @@
   margin: 0;
   padding: 0;
 }
-.mlctr-popup .mlctr-popup-stripe img.mlctr-up {
+.mlctr-popup .seznamAd--wrapper img.mlctr-up {
   max-width: calc(46px + 4vw);
 }
 /* ON CLICK */
-.mlctr-popup .mlctr-popup-stripe:target {
+.mlctr-popup .seznamAd--wrapper:target {
   height: 100%;
   background-color: RGBA(255, 255, 255, 0.9);
   padding: 0;
   border: 0;
   box-sizing: border-box;
 }
-.mlctr-popup .mlctr-popup-stripe:target > a {
+.mlctr-popup .seznamAd--wrapper:target > a {
   display: none !important;
 }
-.mlctr-popup .mlctr-popup-stripe:target .mlctr-popup-content {
-  display: block;
-}
+
 /* Close via CSS;alternative to mailocator.action.do('close') */
 .mlctr-popup:target {
   // display: none;
   // visibility: hidden;
 }
-
-.mlctr-popup__ban {
+.seznamAd--wrapper .tag {
+  display: none;
+}
+.seznamAd--wrapper .content {
   max-width: 1000px;
   margin: 0 auto;
   display: block;
@@ -108,7 +108,7 @@
   }
 }
 
-.mlctr-popup__btn {
+.seznamAd--cButton {
   background-color: #3f3f3f;
   font-size: 14px;
   width: 140px;

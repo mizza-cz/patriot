@@ -6426,12 +6426,13 @@ document.addEventListener('DOMContentLoaded', function () {
   };
 
   window.checkAndClosePopupIfEmpty = function () {
-    var popupContent = document.querySelector('.mlctr-popup__ban');
-    if (popupContent) {
-      if (popupContent.innerText.trim() === '' && popupContent.children.length === 0) {
+    setTimeout(function () {
+      var popupContent = document.querySelector('.content');
+
+      if (!popupContent.innerHTML.trim() || popupContent.children.length === 0) {
         window.closePopup();
       }
-    }
+    }, 2000);
   };
 
   window.checkAndClosePopupIfEmpty();
