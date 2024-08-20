@@ -456,6 +456,10 @@
                       <span>Přeji si dostávat novinky z webového magazínu</span>
                     </label>
                   </div>
+                  <div
+                    class="g-recaptcha"
+                    data-sitekey="6Ld_k34oAAAAAGD6RMdeN-Cz-jT8pcr7nPfsuAhi"
+                  ></div>
                 </div>
                 <div class="col-lg-4">
                   <div class="OrderSection-box">
@@ -490,10 +494,6 @@
                     </table>
                   </div>
                 </div>
-                <div
-                  class="g-recaptcha"
-                  data-sitekey="6Ld_k34oAAAAAGD6RMdeN-Cz-jT8pcr7nPfsuAhi"
-                ></div>
 
                 <div class="col-lg-8">
                   <div class="OrderSection-bottom">
@@ -513,14 +513,12 @@
         <br />
       </main>
       <script>
-        // Функция, которая будет вызываться при изменении выбора предплатного типа
         function updateSummary() {
           var selectedProduct = document.querySelector('input[name="productId"]:checked');
           if (selectedProduct) {
             var productTitle = selectedProduct.parentElement.querySelector('h3').textContent;
             var productPrice = selectedProduct.parentElement.querySelector('span').textContent;
 
-            // Обновляем информацию в Souhrn objednávky
             var summaryTable = document.querySelector('.OrderSection-table');
             summaryTable.rows[0].cells[0].innerHTML =
               '<strong>Předplatné</strong><br />' + productTitle;
@@ -529,13 +527,11 @@
           }
         }
 
-        // Назначаем обработчик события изменения на радиокнопки с выбором типа предплатного
         var radioButtons = document.querySelectorAll('input[name="productId"]');
         radioButtons.forEach(function (radio) {
           radio.addEventListener('change', updateSummary);
         });
 
-        // Вызываем функцию updateSummary при загрузке страницы для начального отображения
         updateSummary();
       </script>
       <div class="mt-10">
