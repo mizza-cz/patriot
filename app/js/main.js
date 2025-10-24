@@ -6437,3 +6437,47 @@ document.addEventListener('DOMContentLoaded', function () {
 
   window.checkAndClosePopupIfEmpty();
 });
+
+document.querySelectorAll('.sbg-button').forEach((btn) => {
+  btn.addEventListener('click', function (e) {
+    e.preventDefault();
+
+    const network = this.dataset.sbgNetwork;
+    const url = encodeURIComponent(this.dataset.sbgUrl || window.location.href);
+    const title = encodeURIComponent(this.dataset.sbgTitle || document.title);
+    const summary = encodeURIComponent(this.dataset.sbgSummary || '');
+    const via = encodeURIComponent(this.dataset.sbgVia || '');
+    const width = this.dataset.sbgWidth || 600;
+    const height = this.dataset.sbgHeight || 400;
+    const left = screen.width / 2 - width / 2;
+    const top = screen.height / 2 - height / 2;
+
+    let shareUrl = '';
+
+    switch (network) {
+      case 'facebook':
+        shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+        break;
+      case 'twitter':
+        shareUrl = `https://twitter.com/intent/tweet?text=${title}&url=${url}&via=${via}`;
+        break;
+      case 'linkedin':
+        shareUrl = `https://www.linkedin.com/shareArticle?mini=true&url=${url}&title=${title}&summary=${summary}`;
+        break;
+      case 'reddit':
+        shareUrl = `https://www.reddit.com/submit?url=${url}&title=${title}`;
+        break;
+      case 'telegram':
+        shareUrl = `https://t.me/share/url?url=${url}&text=${title}`;
+        break;
+      default:
+        return;
+    }
+
+    window.open(
+      shareUrl,
+      'shareWindow',
+      `width=${width},height=${height},top=${top},left=${left},resizable,scrollbars=yes,status=1`,
+    );
+  });
+});
